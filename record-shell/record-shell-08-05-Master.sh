@@ -58,6 +58,9 @@ echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
 
+echo  -e "---------------Configure named---------------\n"
+sleep 5s
+
 echo "[root@Project-08-Task-01 ~]# systemctl start named"
 sleep 3s
 systemctl start named
@@ -82,8 +85,8 @@ echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
 
-read -n1 -p "---------------Reload named---------------"
-echo -e "\n"
+echo  -e "---------------Reload named---------------\n"
+sleep 5s
 
 echo "[root@Project-08-Task-01 ~]# systemctl reload named"
 sleep 3s
@@ -140,8 +143,8 @@ echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
 
-read -p "---------------Configure primary and secondary synchronization and view---------------"
-echo -e "\n"
+echo -e "---------------Configure primary and secondary synchronization and view---------------"
+sleep 5s
 
 #configure primary and secondary synchronization and view on DNS master
 echo "[root@Project-08-Task-01 ~]# sed -i '/zone \".\" IN {/,+3d' /etc/named.conf"
@@ -345,8 +348,8 @@ echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
 
-read -p "---------------Configure domain name records for specific zones---------------"
-echo -e "\n"
+echo -e "---------------Configure domain name records for specific zones---------------"
+sleep 5s
 
 #configure domain name records for specific zones on DNS master
 echo "[root@Project-08-Task-01 ~]# cat > /var/named/com-domain-area <<EOF"
