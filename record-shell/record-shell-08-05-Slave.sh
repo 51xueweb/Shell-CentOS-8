@@ -10,6 +10,15 @@
 ##################################################################################################
 
 #reback start
+cd /etc/yum.repos.d
+cp CentOS-Base.repo CentOS-Base.repo.bak
+cp CentOS-AppStream.repo CentOS-AppStream.repo.bak
+cp CentOS-Extras.repo CentOS-Extras.repo.bak
+
+sed -i 's|mirrorlist=|#mirrorlist=|g' CentOS-Base.repo CentOS-AppStream.repo CentOS-Extras.repo
+sed -i 's|#baseurl=|baseurl=|g' CentOS-Base.repo CentOS-AppStream.repo CentOS-Extras.repo
+sed -i 's|http://mirror.centos.org|https://mirrors.aliyun.com|g' CentOS-Base.repo CentOS-AppStream.repo CentOS-Extras.repo
+
 yum remove bind-utils -y
 
 cp -f /etc/named.conf.bak1 /etc/named.conf
