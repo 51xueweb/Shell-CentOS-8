@@ -102,7 +102,7 @@ echo "[root@Project-05-Task-02 ~]# clear"
 sleep 3s
 clear
 
-echo -e "---------------Look MariaDB---------------\n"
+echo -e "---------------View MariaDB---------------\n"
 sleep 5s
 
 # systemctl status mariadb
