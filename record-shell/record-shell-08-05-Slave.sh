@@ -19,18 +19,16 @@ sed -i 's|mirrorlist=|#mirrorlist=|g' CentOS-Base.repo CentOS-AppStream.repo Cen
 sed -i 's|#baseurl=|baseurl=|g' CentOS-Base.repo CentOS-AppStream.repo CentOS-Extras.repo
 sed -i 's|http://mirror.centos.org|https://mirrors.aliyun.com|g' CentOS-Base.repo CentOS-AppStream.repo CentOS-Extras.repo
 
-yum remove bind-utils -y
+yum remove -y bind-utils
 
 cp -f /etc/named.conf.bak1 /etc/named.conf
-yum remove bind-utils -y
+yum remove -y bind-utils
 rm -f /var/named/com-domain-area
 rm -f /var/named/10.10.3.area
 rm -f /var/named/com-domain-common
 rm -f /var/named/10.10.4.common
-
-yum remove bind -y
-systemctl start firewalld
-setenforce 1
+yum remove -y bind
+yum clean all
 echo "[root@Project-08-Task-05 ~]# clear"
 sleep 3s
 clear
@@ -80,6 +78,13 @@ echo "[root@Project-08-Task-05 ~]# systemctl list-unit-files | grep named.servic
 sleep 3s
 systemctl list-unit-files | grep named.service
 sleep 3s
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
+echo  -e "---------------Reload bind---------------\n"
+sleep 5s
 
 #reload named
 echo "[root@Project-08-Task-05 ~]# systemctl reload named"
@@ -189,6 +194,13 @@ echo "[root@Project-08-Task-05 ~]# sed -i 's#commonSecret#'''$commonSecret'''#g'
 sleep 3s
 sed -i 's#commonSecret#'''$commonSecret'''#g' /etc/named.conf
 sleep 3s
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
+echo -e "---------------Configure specific zones---------------\n"
+sleep 5s
 
 echo "[root@Project-08-Task-05 ~]# cat >> /etc/named.conf <<EOF"
 sleep 3s
@@ -311,7 +323,7 @@ echo "[root@Project-08-Task-05 ~]# clear"
 sleep 3s
 clear
 
-echo -e "---------------check the correctness of bind master configuration file---------------\n"
+echo -e "---------------Check the correctness of bind master configuration file---------------\n"
 sleep 5s
 
 #check the correctness of bind master configuration file
@@ -325,30 +337,54 @@ sleep 3s
 systemctl reload named
 sleep 3s
 
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
 echo "[root@Project-08-Task-05 ~]# ls /var/named"
 sleep 3s
 ls /var/named
 sleep 3s
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
 
 echo "[root@Project-08-Task-05 ~]# cat /var/named/com-domain-area"
 sleep 3s
 cat /var/named/com-domain-area
 sleep 3s
 
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
 echo "[root@Project-08-Task-05 ~]# cat /var/named/com-domain-common"
 sleep 3s
 cat /var/named/com-domain-common
 sleep 3s
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
 
 echo "[root@Project-08-Task-05 ~]#cat /var/named/10.10.3.area "
 sleep 3s
 cat /var/named/10.10.3.area
 sleep 3s
 
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
 echo "[root@Project-08-Task-05 ~]# cat /var/named/10.10.4.common"
 sleep 3s
 cat /var/named/10.10.4.common
 sleep 3s
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
 
 echo "[root@Project-08-Task-05 ~]# cat /var/named/data/named.run | head -n 60"
 sleep 3s
@@ -371,6 +407,10 @@ sleep 3s
 yum install -y bind-utils
 sleep 3s
 
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
 echo "[root@Project-08-Task-05 ~]# dig www.domain.com @10.10.2.120"
 sleep 3s
 dig www.domain.com @10.10.2.120
@@ -386,6 +426,3 @@ read -n1 -p "---------------Please execute Script on Server Master--------------
 echo -e "\n"
 
 #***************reader shell end*****************
-echo "[root@Project-08-Task-05 ~]# clear"
-sleep 3s
-clear

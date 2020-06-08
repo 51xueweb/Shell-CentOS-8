@@ -20,13 +20,13 @@ sed -i 's|#baseurl=|baseurl=|g' CentOS-Base.repo CentOS-AppStream.repo CentOS-Ex
 sed -i 's|http://mirror.centos.org|https://mirrors.aliyun.com|g' CentOS-Base.repo CentOS-AppStream.repo CentOS-Extras.repo
 
 cp -f /etc/named.conf.bak1 /etc/named.conf
-yum remove bind-utils -y
+yum remove -y bind-utils 
 rm -f /var/named/com-domain-area
 rm -f /var/named/10.10.3.area
 rm -f /var/named/com-domain-common
 rm -f /var/named/10.10.4.common
-
 yum remove -y bind
+yum clean all
 echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
@@ -77,6 +77,13 @@ echo "[root@Project-08-Task-01 ~]# systemctl list-unit-files | grep named.servic
 sleep 3s
 systemctl list-unit-files | grep named.service
 sleep 3s
+
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+read -n1 -p "---------------Reload named---------------"
+echo -e "\n"
 
 echo "[root@Project-08-Task-01 ~]# systemctl reload named"
 sleep 3s
@@ -129,6 +136,13 @@ echo -e "\n"
 read -p "---------------Please record the two generated keys in time---------------"
 echo -e "\n"
 
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+read -p "---------------Configure primary and secondary synchronization and view---------------"
+echo -e "\n"
+
 #configure primary and secondary synchronization and view on DNS master
 echo "[root@Project-08-Task-01 ~]# sed -i '/zone \".\" IN {/,+3d' /etc/named.conf"
 sleep 3s
@@ -154,6 +168,10 @@ echo "[root@Project-08-Task-01 ~]# sed -i \"/allow-query/a allow-transfer {10.10
 sleep 3s
 sed -i "/allow-query/a allow-transfer {10.10.2.122;};\nalso-notify {10.10.2.122;};\nnotify yes;\nmasterfile-format text;" /etc/named.conf
 sleep 3s
+
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
 
 echo "[root@Project-08-Task-01 ~]# cat >> /etc/named.conf <<EOF"
 sleep 3s
@@ -206,11 +224,14 @@ sleep 3s
 sed -i 's#commonSecret#'''$commonSecret'''#g' /etc/named.conf
 sleep 3s
 
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
 echo "[root@Project-08-Task-01 ~]# cat >> /etc/named.conf <<EOF"
 sleep 3s
 echo "> view \"area\" {"
 sleep 3s
-echo ""
 echo "> 	match-clients{key area-key; 10.10.2.0/26;};"
 sleep 3s
 echo "> 	server 10.10.2.122 { keys area-key; };"
@@ -320,6 +341,13 @@ view "common" {
 
 EOF
 
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+read -p "---------------Configure domain name records for specific zones---------------"
+echo -e "\n"
+
 #configure domain name records for specific zones on DNS master
 echo "[root@Project-08-Task-01 ~]# cat > /var/named/com-domain-area <<EOF"
 sleep 3s
@@ -335,7 +363,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo "> 3H ) ; minimum"
+echo ">		3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
@@ -387,7 +415,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo "> 3H ) ; minimum"
+echo ">		3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
@@ -447,7 +475,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo "> 3H ) ; minimum"
+echo ">		3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
@@ -499,7 +527,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo "> 3H ) ; minimum"
+echo ">		3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
@@ -541,7 +569,7 @@ echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
 
-echo -e "---------------verify and reload the bind profile on DNS master---------------\n"
+echo -e "---------------Verify and reload the bind profile on DNS master---------------\n"
 sleep 5s
 
 #verify and reload the bind profile on DNS master
@@ -596,11 +624,4 @@ sleep 3s
 dig www.domain.com @10.10.2.122
 sleep 3s
 
-echo -e "\n"
-read -n1 -p "---------------Please execute Script on Server Slave---------------"
-echo -e "\n"
-
 #***************record shell end*****************
-echo "[root@Project-08-Task-01 ~]# clear"
-sleep 3s
-clear
