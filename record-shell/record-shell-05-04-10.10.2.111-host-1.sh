@@ -10,7 +10,7 @@
 ##################################################################################################
 
 # reback start 
-yum remove MariaDB-server -y
+yum remove -y MariaDB-server 
 echo "[root@Project-05-Task-02 ~]# clear"
 sleep 3s
 clear
@@ -77,9 +77,9 @@ clear
 echo -e "---------------Install MariaDB---------------\n"
 sleep 5s
 
-echo "[root@Project-05-Task-02 ~] yum install MariaDB-server -y"
+echo "[root@Project-05-Task-02 ~] yum install -y MariaDB-server "
 sleep 3s
-yum install MariaDB-server -y
+yum install -y MariaDB-server 
 sleep 3s
 
 echo "[root@Project-05-Task-02 ~]# clear"
