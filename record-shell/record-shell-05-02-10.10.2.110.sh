@@ -124,7 +124,7 @@ echo "[root@Project-05-Task-01 ~]# clear"
 sleep 3s
 clear 
 
-echo "---------------Unzip the phpMyAdmin installer to/var/www directory---------------"
+echo -e "---------------Unzip the phpMyAdmin installer to/var/www directory---------------\n"
 sleep 5s
 
 echo "[root@Project-05-Task-01 ~]# cd /var/www/"
