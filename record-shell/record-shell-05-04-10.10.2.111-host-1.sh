@@ -189,15 +189,15 @@ clear
 echo -e "---------------Create and authorize accounts for synchronization---------------\n"
 sleep 5s
 
-echo -e "[root@Project-05-Task-02 ~]# mysql -e \"use mysql;CREATE USER 'replication_user'@'%' IDENTIFIED BY 'centos@mariadb#123';\""
+echo -e "[root@Project-05-Task-02 ~]# mysql -e \"CREATE USER 'replication_user'@'%' IDENTIFIED BY 'centos@mariadb#123';\""
 
 sleep 3s
-mysql -e "use mysql;CREATE USER 'replication_user'@'%' IDENTIFIED BY 'centos@mariadb#123';"
+mysql -e "CREATE USER 'replication_user'@'%' IDENTIFIED BY 'centos@mariadb#123';"
 sleep 3s
 
-echo -e "[root@Project-05-Task-02 ~]# mysql -e \"use mysql; GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%';\""
+echo -e "[root@Project-05-Task-02 ~]# mysql -e \"GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%';\""
 sleep 3s
-mysql -e "use mysql; GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%'"
+mysql -e "GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%'"
 sleep 3s
 
 echo '[root@Project-05-Task-02 ~]# mysql -e "show master status;"'
