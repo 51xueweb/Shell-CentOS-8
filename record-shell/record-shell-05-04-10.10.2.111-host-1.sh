@@ -10,7 +10,7 @@
 ##################################################################################################
 
 # reback start 
-yum remove MariaDB-server -y 
+yum remove -y  MariaDB-server 
 yum -y clean all
 rm -rf /var/lib/mysql/
 rm -f /etc/yum.repos.d/MariaDB.repo

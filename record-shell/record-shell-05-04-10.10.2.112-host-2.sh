@@ -10,8 +10,8 @@
 ##################################################################################################
 
 # reback start
-yum install MariaDB-server -y 
-yum clear all
+yum remove -y MariaDB-server  
+yum -y clean all
 rm -rf /var/lib/mysql/
 rm -f /etc/yum.repos.d/MariaDB.repo
 rm -f /etc/my.cnf
