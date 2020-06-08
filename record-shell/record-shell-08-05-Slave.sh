@@ -56,6 +56,11 @@ sleep 3s
 yum install -y bind
 sleep 3s
 
+echo "[root@Project-08-Task-05 ~]# yum install -y bind-utils"
+sleep 3s
+yum install -y bind-utils
+sleep 3s
+
 echo "[root@Project-08-Task-05 ~]# clear"
 sleep 3s
 clear
@@ -404,18 +409,6 @@ clear
 
 read -n1 -p "---------------Please execute Script on Server Master---------------"
 echo -e "\n"
-
-echo "[root@Project-08-Task-05 ~]# clear"
-sleep 3s
-clear
-
-echo -e "---------------Testing domain name resolution service on DNS slave---------------\n"
-sleep 5s
-
-echo "[root@Project-08-Task-05 ~]# yum install -y bind-utils"
-sleep 3s
-yum install -y bind-utils
-sleep 3s
 
 echo "[root@Project-08-Task-05 ~]# clear"
 sleep 3s
