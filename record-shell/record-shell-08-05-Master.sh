@@ -366,7 +366,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo ">		3H ) ; minimum"
+echo "> 	3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
@@ -418,7 +418,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo ">		3H ) ; minimum"
+echo "> 	3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
@@ -478,7 +478,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo ">		3H ) ; minimum"
+echo "> 	3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
@@ -530,7 +530,7 @@ echo "> 	1H ; retry"
 sleep 3s
 echo "> 	1W ; expire"
 sleep 3s
-echo ">		3H ) ; minimum"
+echo "> 	3H ) ; minimum"
 sleep 3s
 echo "> @ IN NS ns.domain.com."
 sleep 3s
