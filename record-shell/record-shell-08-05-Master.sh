@@ -143,7 +143,7 @@ echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
 
-echo -e "---------------Configure primary and secondary synchronization and view---------------"
+echo -e "---------------Configure primary and secondary synchronization and view---------------\n"
 sleep 5s
 
 #configure primary and secondary synchronization and view on DNS master
@@ -348,7 +348,7 @@ echo "[root@Project-08-Task-01 ~]# clear"
 sleep 3s
 clear
 
-echo -e "---------------Configure domain name records for specific zones---------------"
+echo -e "---------------Configure domain name records for specific zones---------------\n"
 sleep 5s
 
 #configure domain name records for specific zones on DNS master
