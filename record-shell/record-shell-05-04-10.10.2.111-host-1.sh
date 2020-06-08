@@ -20,11 +20,12 @@ clear
 echo "[root@Project-05-Task-02 ~]# nmcli"
 sleep 3s
 nmcli
-echo -e "\n\n"
+echo -e "\n"
 sleep 3s
 
 
 read -n1 -p "---------------Please continue---------------"
+echo -e '\n'
 
 echo "[root@Project-05-Task-02 ~]# clear"
 sleep 3s
@@ -200,12 +201,13 @@ sleep 3s
 mysql -e "show master status;"
 sleep 3s
 
-echo -e "\n\n"
+echo -e "\n"
 read -n1 -p "---------------Record File values and Position values---------------"
-sleep 8s
+sleep 3s
+echo -e '\n'
 read -n1 -p "---------------Please execute Script  2  on server-2 ---------------"
-echo -e "\n\n"
-sleep 8s
+echo -e "\n"
+sleep 3s
 
 echo "[root@Project-05-Task-02 ~]# clear"
 sleep 3s
@@ -246,8 +248,14 @@ sleep 3s
 mysql -e "use fourthdb;select * from test_table;"
 sleep 3s
 
+echo -e '\n'
 read -n1 -p "---------------Please execute Script 2 on server-2---------------"
+echo -e '\n'
+sleep 3s
+
 read -n1 -p "---------------Please continue End---------------"
+echo -e '\n'
+
 
 echo "[root@Project-05-Task-02 ~]# clear"
 sleep 3s

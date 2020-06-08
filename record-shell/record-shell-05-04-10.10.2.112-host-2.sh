@@ -24,7 +24,7 @@ sleep 3s
 nmcli
 sleep 3s
 
-echo -e "\n\n"
+echo -e "\n"
 read -n1 -p "---------------Please continue---------------"
 
 echo "[root@Project-05-Task-03 ~]# clear"
@@ -225,7 +225,7 @@ sleep 5s
 
 read -n1 -p "---------------Please execute Script 1 on server-1---------------"
 sleep 3s
-
+echo -e '\n'
 echo '[root@Project-05-Task-03 ~]# mysql -e "show databases;"'
 sleep 3s
 mysql -e "show databases;"
@@ -241,7 +241,9 @@ sleep 3s
 mysql -e "use fourthdb;select * from test_table;"
 sleep 3s
 
+echo -e '\n'
 read -n1 -p "---------------Please continue End---------------"
+echo -e '\n'
 
 echo "[root@Project-05-Task-03 ~]# clear"
 sleep 3s
