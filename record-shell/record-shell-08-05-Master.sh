@@ -125,6 +125,13 @@ sleep 3s
 yum install -y bind-utils
 sleep 3s
 
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+echo -e "---------------Generate TSIG key---------------\n"
+sleep 5s
+
 echo "[root@Project-08-Task-01 ~]# tsig-keygen -a hmac-md5 area-key"
 sleep 3s
 tsig-keygen -a hmac-md5 area-key
