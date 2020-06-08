@@ -10,8 +10,11 @@
 ##################################################################################################
 
 # reback start
-yum remove -y MariaDB-server 
+yum install MariaDB-server -y 
+yum clear all
+rm -rf /var/lib/mysql/
 rm -f /etc/yum.repos.d/MariaDB.repo
+rm -f /etc/my.cnf
 echo "[root@Project-05-Task-03 ~]# clear"
 sleep 3s
 clear
