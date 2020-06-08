@@ -231,9 +231,9 @@ sleep 3s
 mysql -e "use fourthdb;create table test_table(id int(11),name varchar(20),sex enum('0','1','2'),primary key (id));"
 sleep 3s
 
-echo -e "[root@Project-05-Task-02 ~]# mysql -e \"use fourthdb;insert into test_table ( id, name,sex ) VALUES ( 1, 'name1','0' );\""
+echo -e "[root@Project-05-Task-02 ~]# mysql -e \"use fourthdb;insert into test_table (id,name,sex) VALUES (1,'name1','0');\""
 sleep 3s
-mysql -e "use fourthdb;insert into test_table ( id, name,sex ) VALUES ( 1, 'name1','0' );"
+mysql -e "use fourthdb;insert into test_table (id,name,sex) VALUES (1,'name1','0');"
 sleep 3s
 
 
