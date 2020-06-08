@@ -426,9 +426,4 @@ echo "[root@Project-08-Task-05 ~]# dig www.domain.com @10.10.2.122"
 sleep 3s
 dig www.domain.com @10.10.2.122
 sleep 3s
-
-echo -e "\n"
-read -n1 -p "---------------Please execute Script on Server Master---------------"
-echo -e "\n"
-
 #***************reader shell end*****************

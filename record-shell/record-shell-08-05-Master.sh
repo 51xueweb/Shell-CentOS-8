@@ -634,4 +634,10 @@ sleep 3s
 dig www.domain.com @10.10.2.122
 sleep 3s
 
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+read -n1 -p "---------------Please execute Script on Server Slave---------------"
+echo -e "\n"
 #***************record shell end*****************
