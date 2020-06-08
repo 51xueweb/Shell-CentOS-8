@@ -200,7 +200,7 @@ sleep 3s
 mysql -e "use mysql; GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%'"
 sleep 3s
 
-echo '[root@Project-05-Task-02 ~]# mysql -e "use mysql;show master status;"'
+echo '[root@Project-05-Task-02 ~]# mysql -e "show master status;"'
 sleep 3s
 mysql -e "show master status;"
 sleep 3s
