@@ -233,12 +233,12 @@ mysql -e "use fourthdb;insert into test_table ( id, name,sex ) VALUES ( 1, 'name
 sleep 3s
 
 
-echo '[root@Project-05-Task-03 ~]# mysql -e "show databases;"'
+echo '[root@Project-05-Task-02 ~]# mysql -e "show databases;"'
 sleep 3s
 mysql -e "show databases;"
 sleep 3s
 
-echo '[root@Project-05-Task-03 ~]# mysql -e "use fourthdb;show tables;"'
+echo '[root@Project-05-Task-02 ~]# mysql -e "use fourthdb;show tables;"'
 sleep 3s
 mysql -e "use fourthdb;show tables;"
 sleep 3s
