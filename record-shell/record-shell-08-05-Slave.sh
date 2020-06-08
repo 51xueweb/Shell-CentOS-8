@@ -56,6 +56,13 @@ sleep 3s
 yum install -y bind
 sleep 3s
 
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
+echo  -e "---------------Configure named---------------\n"
+sleep 5s
+
 #view information
 echo "[root@Project-08-Task-05 ~]# systemctl start named"
 sleep 3s
@@ -83,7 +90,7 @@ echo "[root@Project-08-Task-05 ~]# clear"
 sleep 3s
 clear
 
-echo  -e "---------------Reload bind---------------\n"
+echo  -e "---------------Reload named---------------\n"
 sleep 5s
 
 #reload named
@@ -388,10 +395,13 @@ clear
 
 echo "[root@Project-08-Task-05 ~]# cat /var/named/data/named.run | head -n 60"
 sleep 3s
-cat /var/named/data/named.run | head -n 60
+cat /var/named/data/named.run | head -n 40
 sleep 3s
 
-echo -e "\n"
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
 read -n1 -p "---------------Please execute Script on Server Master---------------"
 echo -e "\n"
 
@@ -410,6 +420,9 @@ sleep 3s
 echo "[root@Project-08-Task-05 ~]# clear"
 sleep 3s
 clear
+
+echo -e "---------------Testing domain name resolution service on DNS slave---------------\n"
+sleep 5s
 
 echo "[root@Project-08-Task-05 ~]# dig www.domain.com @10.10.2.120"
 sleep 3s
