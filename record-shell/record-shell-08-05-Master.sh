@@ -24,13 +24,21 @@ clear
 # reback end
 
 #***************record shell start***************
-echo  -e "---------------Implementing DNS-Master---------------\n"
-sleep 5s
-
 echo "[root@Project-08-Task-01 ~]# nmcli"
 sleep 3s
 nmcli
 sleep 3s
+
+echo -e "\n"
+read -n1 -p "---------------Please execute Script on Server Slave---------------"
+echo -e "\n"
+
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+echo  -e "---------------Install bind---------------\n"
+sleep 5s
 
 echo "[root@Project-08-Task-01 ~]# yum install -y bind"
 sleep 3s
@@ -78,8 +86,12 @@ sleep 3s
 
 echo -e "\n"
 read -n1 -p "---------------Please execute Script on Server Slave---------------"
-
 echo -e "\n"
+
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
 echo -e "---------------Configure DNS master as the primary domain name resolution service---------------\n"
 sleep 5s
 
@@ -404,6 +416,13 @@ cat > /var/named/10.10.3.area <<EOF
 
 EOF
 
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+echo -e "---------------Configure the universal zone domain name record---------------\n"
+sleep 5s
+
 #configure the universal zone domain name record on DNS master
 echo "[root@Project-08-Task-01 ~]# cat > /var/named/com-domain-common <<EOF"
 sleep 3s
@@ -509,6 +528,13 @@ cat > /var/named/10.10.4.common <<EOF
 
 EOF
 
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
+echo -e "---------------verify and reload the bind profile on DNS master---------------\n"
+sleep 5s
+
 #verify and reload the bind profile on DNS master
 echo "[root@Project-08-Task-01 ~]# named-checkconf /etc/named.conf"
 sleep 3s
@@ -542,8 +568,12 @@ sleep 3s
 
 echo -e "\n"
 read -n1 -p "---------------Please execute Script on Server Slave---------------"
-
 echo -e "\n"
+
+echo "[root@Project-08-Task-01 ~]# clear"
+sleep 3s
+clear
+
 echo -e "---------------Testing domain name resolution service on DNS master---------------\n"
 sleep 5s
 
@@ -559,6 +589,7 @@ sleep 3s
 
 echo -e "\n"
 read -n1 -p "---------------Please execute Script on Server Slave---------------"
+echo -e "\n"
 
 #***************record shell end*****************
 echo "[root@Project-08-Task-01 ~]# clear"

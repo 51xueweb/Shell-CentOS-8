@@ -28,14 +28,21 @@ clear
 #reback end
 
 #***************reader shell start***************
-
-echo -e "---------------Implementing DNS-Slave---------------\n"
-sleep 5s
-
 echo "[root@Project-08-Task-05 ~]# nmcli"
 sleep 3s
 nmcli
 sleep 3s
+
+echo -e "\n"
+read -n1 -p "---------------Please execute Script on Server Master---------------"
+echo -e "\n"
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
+echo  -e "---------------Install bind---------------\n"
+sleep 5s
 
 echo "[root@Project-08-Task-05 ~]# yum install -y bind"
 sleep 3s
@@ -84,8 +91,12 @@ sleep 3s
 
 echo -e "\n"
 read -n1 -p "---------------Please execute Script on Server Master---------------"
-
 echo -e "\n"
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
 echo -e "---------------Configure primary and secondary synchronization and view---------------\n"
 sleep 5s
 
@@ -287,6 +298,13 @@ view "common" {
 
 EOF
 
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
+echo -e "---------------check the correctness of bind master configuration file---------------\n"
+sleep 5s
+
 #check the correctness of bind master configuration file
 echo "[root@Project-08-Task-05 ~]# named-checkconf /etc/named.conf"
 sleep 3s
@@ -330,8 +348,12 @@ sleep 3s
 
 echo -e "\n"
 read -n1 -p "---------------Please execute Script on Server Master---------------"
-
 echo -e "\n"
+
+echo "[root@Project-08-Task-05 ~]# clear"
+sleep 3s
+clear
+
 echo -e "---------------Testing domain name resolution service on DNS slave---------------\n"
 sleep 5s
 
@@ -349,6 +371,10 @@ echo "[root@Project-08-Task-05 ~]# dig www.domain.com @10.10.2.122"
 sleep 3s
 dig www.domain.com @10.10.2.122
 sleep 3s
+
+echo -e "\n"
+read -n1 -p "---------------Please execute Script on Server Master---------------"
+echo -e "\n"
 
 #***************reader shell end*****************
 echo "[root@Project-08-Task-05 ~]# clear"
